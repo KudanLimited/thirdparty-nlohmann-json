@@ -4781,7 +4781,7 @@ class basic_json
                 future 4.0.0 of the library. Please use @ref items() instead;
                 that is, replace `json::iterator_wrapper(j)` with `j.items()`.
     */
-    JSON_HEDLEY_DEPRECATED_FOR(3.1.0, items())
+    // JSON_HEDLEY_DEPRECATED_FOR(3.1.0, items())
     static iteration_proxy<iterator> iterator_wrapper(reference ref) noexcept
     {
         return ref.items();
@@ -4790,7 +4790,7 @@ class basic_json
     /*!
     @copydoc iterator_wrapper(reference)
     */
-    JSON_HEDLEY_DEPRECATED_FOR(3.1.0, items())
+    // JSON_HEDLEY_DEPRECATED_FOR(3.1.0, items())
     static iteration_proxy<const_iterator> iterator_wrapper(const_reference ref) noexcept
     {
         return ref.items();
@@ -6575,7 +6575,7 @@ class basic_json
                 instead; that is, replace calls like `j >> o;` with `o << j;`.
     @since version 1.0.0; deprecated since version 3.0.0
     */
-    JSON_HEDLEY_DEPRECATED_FOR(3.0.0, operator<<(std::ostream&, const basic_json&))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.0.0, operator<<(std::ostream&, const basic_json&))
     friend std::ostream& operator>>(const basic_json& j, std::ostream& o)
     {
         return o << j;
@@ -6694,7 +6694,7 @@ class basic_json
     }
 
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, parse(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, parse(ptr, ptr + len))
     static basic_json parse(detail::span_input_adapter&& i,
                             const parser_callback_t cb = nullptr,
                             const bool allow_exceptions = true,
@@ -6750,7 +6750,7 @@ class basic_json
     }
 
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, accept(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, accept(ptr, ptr + len))
     static bool accept(detail::span_input_adapter&& i,
                        const bool ignore_comments = false)
     {
@@ -6824,7 +6824,7 @@ class basic_json
     }
 
     template <typename SAX>
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, sax_parse(ptr, ptr + len, ...))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, sax_parse(ptr, ptr + len, ...))
     JSON_HEDLEY_NON_NULL(2)
     static bool sax_parse(detail::span_input_adapter&& i, SAX* sax,
                           input_format_t format = input_format_t::json,
@@ -6845,7 +6845,7 @@ class basic_json
                 instead; that is, replace calls like `j << i;` with `i >> j;`.
     @since version 1.0.0; deprecated since version 3.0.0
     */
-    JSON_HEDLEY_DEPRECATED_FOR(3.0.0, operator>>(std::istream&, basic_json&))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.0.0, operator>>(std::istream&, basic_json&))
     friend std::istream& operator<<(basic_json& j, std::istream& i)
     {
         return operator>>(i, j);
@@ -7501,7 +7501,7 @@ class basic_json
 
     template<typename T>
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_cbor(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_cbor(ptr, ptr + len))
     static basic_json from_cbor(const T* ptr, std::size_t len,
                                 const bool strict = true,
                                 const bool allow_exceptions = true,
@@ -7512,7 +7512,7 @@ class basic_json
 
 
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_cbor(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_cbor(ptr, ptr + len))
     static basic_json from_cbor(detail::span_input_adapter&& i,
                                 const bool strict = true,
                                 const bool allow_exceptions = true,
@@ -7643,7 +7643,7 @@ class basic_json
 
     template<typename T>
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_msgpack(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_msgpack(ptr, ptr + len))
     static basic_json from_msgpack(const T* ptr, std::size_t len,
                                    const bool strict = true,
                                    const bool allow_exceptions = true)
@@ -7652,7 +7652,7 @@ class basic_json
     }
 
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_msgpack(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_msgpack(ptr, ptr + len))
     static basic_json from_msgpack(detail::span_input_adapter&& i,
                                    const bool strict = true,
                                    const bool allow_exceptions = true)
@@ -7757,7 +7757,7 @@ class basic_json
 
     template<typename T>
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_ubjson(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_ubjson(ptr, ptr + len))
     static basic_json from_ubjson(const T* ptr, std::size_t len,
                                   const bool strict = true,
                                   const bool allow_exceptions = true)
@@ -7766,7 +7766,7 @@ class basic_json
     }
 
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_ubjson(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_ubjson(ptr, ptr + len))
     static basic_json from_ubjson(detail::span_input_adapter&& i,
                                   const bool strict = true,
                                   const bool allow_exceptions = true)
@@ -7870,7 +7870,7 @@ class basic_json
 
     template<typename T>
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_bson(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_bson(ptr, ptr + len))
     static basic_json from_bson(const T* ptr, std::size_t len,
                                 const bool strict = true,
                                 const bool allow_exceptions = true)
@@ -7879,7 +7879,7 @@ class basic_json
     }
 
     JSON_HEDLEY_WARN_UNUSED_RESULT
-    JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_bson(ptr, ptr + len))
+    // JSON_HEDLEY_DEPRECATED_FOR(3.8.0, from_bson(ptr, ptr + len))
     static basic_json from_bson(detail::span_input_adapter&& i,
                                 const bool strict = true,
                                 const bool allow_exceptions = true)
